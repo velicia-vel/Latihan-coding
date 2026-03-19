@@ -161,17 +161,13 @@ int main()
     return 0;
 } */
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main()
 {
     int tugas, UTS, UAS;
-    float nilai_akhir;
+    float nilai_akhir, remedial;
     int jumlah_A = 0, jumlah_B = 0, jumlah_C = 0, jumlah_D = 0;
-    char huruf;
-    float rata = 0;
-    int max;
-    int min;
-    float total = 0;
+    float rata = 0, max, min, total = 0;
 
     for (int i = 0; i < 10; i++)
     {
@@ -183,40 +179,37 @@ int main()
         scanf("%d", &UAS);
 
         nilai_akhir = 0.3 * tugas + 0.3 * UTS + 0.4 * UAS;
-        total += nilai_akhir;
-        printf("Nilai akhir = %.2f\n", nilai_akhir);
+
+        if (nilai_akhir < 60)
+        {
+            printf("Remedial!. Masukkan nilai remedial: ");
+            scanf("%f", &remedial);
+
+            if (remedial > nilai_akhir)
+            {
+                nilai_akhir = remedial;
+            }
+        }
+
+        printf("Nilai akhir: %.2f\n", nilai_akhir);
 
         if (nilai_akhir > 90)
         {
-            huruf = 'A';
-            printf("Nilai huruf = A\n\n");
             jumlah_A++;
         }
         else if (nilai_akhir > 80)
         {
-            huruf = 'B';
-            printf("Nilai huruf = B\n\n");
             jumlah_B++;
         }
         else if (nilai_akhir > 70)
         {
-            huruf = 'C';
-            printf("Nilai huruf = C\n\n");
             jumlah_C++;
         }
         else
         {
-            huruf = 'D';
-            printf("Nilai huruf = D\n");
-            printf("Remedial!\n\n");
             jumlah_D++;
         }
-    }
 
-    rata = total / 10.0;
-
-    for (int i = 0; i < 10; i++)
-    {
         if (i == 0)
         {
             max = nilai_akhir;
@@ -233,7 +226,12 @@ int main()
                 min = nilai_akhir;
             }
         }
+
+        total += nilai_akhir;
+        printf("\n");
     }
+
+    rata = total / 10.0;
 
     printf("Jumlah nilai A: %d\n", jumlah_A);
     printf("Jumlah nilai B: %d\n", jumlah_B);
@@ -246,4 +244,4 @@ int main()
     printf("Nilai terendah       : %.2f\n", min);
 
     return 0;
-}
+} */
