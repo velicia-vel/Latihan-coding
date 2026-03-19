@@ -114,7 +114,7 @@ int cek_prima(int n)
     return 1;
 } */
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 typedef struct {
     char nama[100];
@@ -135,12 +135,14 @@ int main()
 
     int max = input[0].harga;
     int min = input[0].harga;
+    int idxMax = 0, idxMin = 0;
 
     for (int i = 0; i < 3; i++)
     {
         if (input[i].harga > max)
         {
             max = input[i].harga;
+            idxMax = i;
         }
     }
 
@@ -149,11 +151,99 @@ int main()
         if (input[i].harga < min)
         {
             min = input[i].harga;
+            idxMin = i;
         }
     }
 
-    printf("\nBarang dengan harga termurah = %d\n", min);
-    printf("Barang dengan harga termahal = %d\n", max);
+    printf("\nBarang dengan harga termurah = %s Rp %d\n", input[idxMin].nama, min);
+    printf("Barang dengan harga termahal = %s Rp %d\n", input[idxMax].nama, max);
 
     return 0;
-} git 
+} */
+
+#include <stdio.h>
+int main()
+{
+    int tugas, UTS, UAS;
+    float nilai_akhir;
+    int jumlah_A = 0, jumlah_B = 0, jumlah_C = 0, jumlah_D = 0;
+    char huruf;
+    float rata = 0;
+    int max;
+    int min;
+    float total = 0;
+
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Nilai tugas mahasiswa ke-%d: ", i + 1);
+        scanf("%d", &tugas);
+        printf("Nilai UTS mahasiswa ke-%d: ", i + 1);
+        scanf("%d", &UTS);
+        printf("Nilai UAS mahasiswa ke-%d: ", i + 1);
+        scanf("%d", &UAS);
+
+        nilai_akhir = 0.3 * tugas + 0.3 * UTS + 0.4 * UAS;
+        total += nilai_akhir;
+        printf("Nilai akhir = %.2f\n", nilai_akhir);
+
+        if (nilai_akhir > 90)
+        {
+            huruf = 'A';
+            printf("Nilai huruf = A\n\n");
+            jumlah_A++;
+        }
+        else if (nilai_akhir > 80)
+        {
+            huruf = 'B';
+            printf("Nilai huruf = B\n\n");
+            jumlah_B++;
+        }
+        else if (nilai_akhir > 70)
+        {
+            huruf = 'C';
+            printf("Nilai huruf = C\n\n");
+            jumlah_C++;
+        }
+        else
+        {
+            huruf = 'D';
+            printf("Nilai huruf = D\n");
+            printf("Remedial!\n\n");
+            jumlah_D++;
+        }
+    }
+
+    rata = total / 10.0;
+
+    for (int i = 0; i < 10; i++)
+    {
+        if (i == 0)
+        {
+            max = nilai_akhir;
+            min = nilai_akhir;
+        }
+        else
+        {
+            if (nilai_akhir > max)
+            {
+                max = nilai_akhir;
+            }
+            if (nilai_akhir < min)
+            {
+                min = nilai_akhir;
+            }
+        }
+    }
+
+    printf("Jumlah nilai A: %d\n", jumlah_A);
+    printf("Jumlah nilai B: %d\n", jumlah_B);
+    printf("Jumlah nilai C: %d\n", jumlah_C);
+    printf("Jumlah nilai D: %d\n", jumlah_D);
+
+    printf("\nTotal nilai akhir    : %.2f\n", total);
+    printf("Rata-rata nilai akhir: %.2f\n", rata);
+    printf("\nNilai tertinggi      : %.2f\n", max);
+    printf("Nilai terendah       : %.2f\n", min);
+
+    return 0;
+}
