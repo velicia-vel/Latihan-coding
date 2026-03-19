@@ -1,3 +1,4 @@
+// 1
 /* #include <stdio.h>
 int main()
 {
@@ -31,6 +32,7 @@ int main()
     return 0;
 } */
 
+// 2
 /* #include <stdio.h>
 int main()
 {
@@ -71,6 +73,7 @@ int main()
     return 0;
 } */
 
+// 3
 /* #include <stdio.h>
 
 int cek_prima(int n);
@@ -114,6 +117,7 @@ int cek_prima(int n)
     return 1;
 } */
 
+// 4
 /* #include <stdio.h>
 
 typedef struct {
@@ -161,6 +165,7 @@ int main()
     return 0;
 } */
 
+// 5
 /* #include <stdio.h>
 int main()
 {
