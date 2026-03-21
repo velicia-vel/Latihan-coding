@@ -1,0 +1,3 @@
+Sabun 35000
+Tisu 20000
+Shampoo 45000
