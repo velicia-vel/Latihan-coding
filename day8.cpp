@@ -110,8 +110,59 @@ int main()
 } */
 
 // 4
-#include <stdio.h>
+/* #include <stdio.h>
 int main()
 {
-    
-}
+    int angka[5], cari, ketemu = 0;
+
+    for (int i = 0; i < 5; i++)
+    {
+        printf("Masukkan angka ke-%d: ", i + 1);
+        scanf("%d", &angka[i]);
+    }
+
+    printf("Masukkan angka yang ingin dicari: ");
+    scanf("%d", &cari);
+
+    for (int i = 0; i < 5; i++)
+    {
+        if (angka[i] == cari)
+        {
+            ketemu = 1;
+            break;
+        }
+    }
+
+    if (ketemu == 1)
+    {
+        printf("Angka %d ADA di dalam array\n", cari);
+    }
+    else
+    {
+        printf("Angka %d TIDAK ADA di dalam array\n", cari);
+    }
+    return 0;
+} */
+
+// 5
+/* #include <stdio.h>
+int main()
+{
+    int i, j, spasi;
+
+    for (i = 1; i <= 9; i += 2)
+    {
+        for (spasi = 1; spasi <= (9 - i) / 2; spasi++)
+        {
+            printf(" ");
+        }
+
+        for (j = 1; j <= i; j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+} */
